@@ -5,7 +5,14 @@ namespace Tyuiu.SadykovSV.Sprint5.Task0.V30.Lib
     {
         public string SaveToFileTextData(int x)
         {
-            double res = 
+            string path = Path.Combine(Path.GetTempPath(), "OutPutFileTask0.txt");
+
+            double y = (Math.Pow(x, 2) + 1) / (3.0 * x + 4);
+            y = Math.Round(y, 3);
+
+            File.WriteAllText(path, Convert.ToString(y));
+
+            return path;
         }
     }
 }
